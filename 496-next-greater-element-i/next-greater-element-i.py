@@ -1,7 +1,10 @@
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
         h=defaultdict(int)
+        n1=set(nums1)
         for i in range(len(nums2)):
+            if nums2[i] not in n1:
+                continue
             max1=-1
             for j in range(i+1,len(nums2)):
                 if nums2[j]>nums2[i]:

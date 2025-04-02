@@ -4,8 +4,8 @@ class Solution:
         # for n in nums:
         #     a^=n
         # return a
-        if len(nums)==1:
-            return nums[0]
+        # if len(nums)==1:
+        #     return nums[0]
         l=0
         h=len(nums)-1
         while(l<=h):

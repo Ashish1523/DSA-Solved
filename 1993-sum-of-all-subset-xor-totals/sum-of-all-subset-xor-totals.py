@@ -13,9 +13,9 @@ class Solution:
             dfs(i+1)
         dfs(0)
         f_res=0
-        for i in range(len(result)):
+        for i in result:
             s=0
-            for j in range(len(result[i])):
-                s^=result[i][j]
+            for j in i:
+                s^=j
             f_res+=s
         return f_res

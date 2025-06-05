@@ -12,7 +12,7 @@ class Solution:
             #     print(sum1,ans,mid)
             #     return mid
             if sum1<=threshold:
-                print(sum1,ans,mid)
+                # print(sum1,ans,mid)
                 ans=min(ans,mid)
                 high=mid-1
             else:

@@ -17,7 +17,7 @@ class Solution:
         
         if n%2==0:
             k=n//2
-            return (myPow(20,k))%modul
+            return (myPow(4,k)*myPow(5,k))%modul
         else:
             k=n//2
-            return ((myPow(20,k))*5)%modul
+            return ((myPow(5,k)*myPow(4,k))*5)%modul

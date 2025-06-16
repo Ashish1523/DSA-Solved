@@ -3,7 +3,7 @@ class Solution:
         res=[]
         stack=[]
         def backtrack(i):
-            if i>=len(s) or i<0:
+            if i>=len(s):
                 res.append("".join(stack))
                 return
             if s[i].isalpha():

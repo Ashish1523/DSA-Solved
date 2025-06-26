@@ -9,6 +9,7 @@ class Solution:
                 if stack:
                     ans[i]=stack[-1][1]
                 stack.append([heights[i],i])
+            stack=[]
             return ans
 
         def nex_s_e(heights):
@@ -20,6 +21,7 @@ class Solution:
                 if stack:
                     ans[i]=stack[-1][1]
                 stack.append([heights[i],i])
+            stack=[]
             return ans
         pse=prev_s_e(heights)
         nse=nex_s_e(heights)

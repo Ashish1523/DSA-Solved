@@ -35,5 +35,4 @@ class Solution:
                     else:
                         dp_mat[i][j]=min(dp_mat[i][j-1],dp_mat[i-1][j],dp_mat[i-1][j-1])+1
                     maxy=max(maxy,dp_mat[i][j])
-        # print(dp_mat)
         return maxy**2

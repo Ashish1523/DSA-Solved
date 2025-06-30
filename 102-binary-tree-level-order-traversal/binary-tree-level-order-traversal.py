@@ -11,17 +11,15 @@ class Solution:
         q.append(root)
 
         while q:
-            qlen=len(q)
-            level=[]
-            for i in range(qlen):
+            stack=[]
+            for i in range(len(q)):
                 node=q.popleft()
                 if node:
-                    level.append(node.val)
+                    stack.append(node.val)
                     q.append(node.left)
                     q.append(node.right)
-            if level:
-                res.append(level)
+            if stack:
+                res.append(stack)
         return res
-
 
 

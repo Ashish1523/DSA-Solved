@@ -18,7 +18,7 @@ class Solution:
             last=0
             for i in range(l):
                 node,idx=q.popleft()
-                print(node.val,idx)
+                # print(node.val,idx)
                 if i==0:
                     first=idx
                 if i==l-1:

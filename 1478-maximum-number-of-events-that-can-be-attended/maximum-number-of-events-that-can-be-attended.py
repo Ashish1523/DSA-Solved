@@ -2,7 +2,7 @@ class Solution:
     def maxEvents(self, events: List[List[int]]) -> int:
         n=len(events)
         max_day=max(event[1] for event in events)
-        print(max_day)
+        # print(max_day)
         events.sort()
         pq=[]
         ans,j=0,0

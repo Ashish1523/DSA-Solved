@@ -11,10 +11,11 @@ class Solution:
             if root ==None:
                 return
             inorder(root.left)
-            heapq.heappush(q,-root.val)
-            if len(q)>k:
-                heapq.heappop(q)
+            # heapq.heappush(q,-root.val)
+            # if len(q)>k:
+            #     heapq.heappop(q)
+            q.append(root.val)
             inorder(root.right)
         inorder(root)
-        print(q)
-        return -q[0]
+        # return -q[0]
+        return q[k-1]

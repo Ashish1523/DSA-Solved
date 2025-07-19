@@ -14,18 +14,17 @@ class Solution:
             if indegree[i]==0:
                 q.append(i)
         
-        ans=[0]*numCourses
-        ind=0
+        ans=[]
 
         while q:
             node=q.popleft()
-            ans[ind]=node
-            ind+=1
+            ans.append(node)
+            # ind+=1
 
             for i in adj[node]:
                 indegree[i]-=1
                 if indegree[i]==0:
                     q.append(i)
         # print(ans)
-        return ans if ind==numCourses else []
+        return ans if len(ans)==numCourses else []
             

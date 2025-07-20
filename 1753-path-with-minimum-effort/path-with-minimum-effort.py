@@ -6,11 +6,11 @@ class Solution:
         start=[0,0]
         end=[m-1,n-1]
         pq=[]
-        heapq.heappush(pq,[start,0])
+        heapq.heappush(pq,[0,0,0])
         dist[0][0]=0
         dest=[[0,1],[0,-1],[-1,0],[1,0]]
         while pq:
-            [row,col],diff=heapq.heappop(pq)
+            diff,row,col=heapq.heappop(pq)
             if [row,col]==end:
                 return diff
             for r,c in dest:
@@ -21,7 +21,7 @@ class Solution:
                     newDiff=max(abs(heights[nrow][ncol]-heights[row][col]),diff)
                     if newDiff<dist[nrow][ncol]:
                         dist[nrow][ncol]=newDiff
-                        heapq.heappush(pq,[[nrow,ncol],newDiff])
+                        heapq.heappush(pq,[newDiff,nrow,ncol])
         # return dist[m-1][n-1]
         
             

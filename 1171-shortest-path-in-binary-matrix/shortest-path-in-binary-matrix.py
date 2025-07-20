@@ -4,9 +4,10 @@ class Solution:
         n=len(grid[0])
         if grid==[[0]]:
             return 1
-        dist=[[200 for _ in range(n)] for _ in range(m)]
         if grid[0][0] != 0 or grid[m - 1][n - 1] != 0:
             return -1
+        dist=[[200 for _ in range(n)] for _ in range(m)]
+        
         q=deque()
         dist[0][0]=1
         q.append([[0,0],1])

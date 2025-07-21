@@ -9,19 +9,18 @@ class Solution:
         dist[k-1]=0
         pq=[]
         heapq.heappush(pq,[0,k-1])
+        visited=set()
 
         while pq:
             distance,node=heapq.heappop(pq)
-
+            visited.add(node)
             for adjNode,weight in adj[node]:
                 # print(adjNode)
                 if distance+weight<dist[adjNode]:
                     dist[adjNode]=distance+weight
                     heapq.heappush(pq,[distance+weight,adjNode])
-        ans=0
-        for i in dist:
-            if i==float('inf'):
-                return -1
-            ans=max(i,ans)
-        return ans
+        
+        if len(visited)<n:
+            return -1
+        return max(dist)
             

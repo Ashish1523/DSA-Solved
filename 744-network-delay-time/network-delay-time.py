@@ -13,7 +13,10 @@ class Solution:
 
         while pq:
             distance,node=heapq.heappop(pq)
+            if node in visited:
+                continue
             visited.add(node)
+            
             for adjNode,weight in adj[node]:
                 # print(adjNode)
                 if distance+weight<dist[adjNode]:

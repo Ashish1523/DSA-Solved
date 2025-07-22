@@ -25,12 +25,14 @@ class Solution:
         if len(connections) < n-1:
             return -1
         ds=Disjoint(n)
-        cntExtras=0
+        # cntExtras=0
         for n1,n2 in connections:
             if ds.find(n1)==ds.find(n2):
-                cntExtras+=1
+                # cntExtras+=1
+                continue
             else:
                 ds.unionSet(n1,n2)
+        # print(cntExtras)
         cntC=0
         for i in range(n):
             if ds.find(i)==i:

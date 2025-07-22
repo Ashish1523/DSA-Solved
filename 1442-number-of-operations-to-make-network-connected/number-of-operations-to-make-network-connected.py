@@ -22,6 +22,8 @@ class Disjoint:
 
 class Solution:
     def makeConnected(self, n: int, connections: List[List[int]]) -> int:
+        if len(connections) < n-1:
+            return -1
         ds=Disjoint(n)
         cntExtras=0
         for n1,n2 in connections:
@@ -33,9 +35,6 @@ class Solution:
         for i in range(n):
             if ds.find(i)==i:
                 cntC+=1
-        ans=cntC-1
-        if cntExtras>=ans:
-            return ans
-        return -1
+        return cntC-1
 
         

@@ -34,7 +34,7 @@ class Solution:
         for it in stones:
             nrow=it[0]
             ncol=it[1]+maxRow+1
-            print(nrow,ncol)
+            # print(nrow,ncol)
             ds.unionSet(nrow,ncol)
             mapy.add(nrow)
             mapy.add(ncol)

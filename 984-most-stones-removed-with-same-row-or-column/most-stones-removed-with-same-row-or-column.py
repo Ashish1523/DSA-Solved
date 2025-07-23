@@ -30,14 +30,14 @@ class Solution:
             maxCol=max(c,maxCol)
         ds=Disjoint(maxRow+maxCol+2)
 
-        mapy={}
+        mapy=set()
         for it in stones:
             nrow=it[0]
             ncol=it[1]+maxRow+1
             print(nrow,ncol)
             ds.unionSet(nrow,ncol)
-            mapy[nrow]=1
-            mapy[ncol]=1
+            mapy.add(nrow)
+            mapy.add(ncol)
         
         cnt=0
         for i in mapy:

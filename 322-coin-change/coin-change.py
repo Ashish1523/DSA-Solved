@@ -3,7 +3,7 @@ class Solution:
         if amount==0:
             return 0
         n=len(coins)
-        dp=[[-1 for _ in range(amount+1)] for _ in range(n)]
+        # dp=[[-1 for _ in range(amount+1)] for _ in range(n)]
         # def dfs(i,amt):
         #     if i==0:
         #         if amt%coins[i]==0:
@@ -22,17 +22,13 @@ class Solution:
         # dfs(n-1,amount)
         # return dp[n-1][amount] if dp[n-1][amount]!=float('inf') else -1
 
-        for i in range(amount+1):
-            if i%coins[0]==0:
-                dp[0][i]=i//coins[0]
-            else:
-                dp[0][i]=float('inf')
+        dp=[float('inf')]*(amount+1)
+        dp[0]=0
         
-        for i in range(1,n):
-            for t in range(amount+1):
-                notTake=dp[i-1][t]
-                take=float('inf')
-                if coins[i]<=t:
-                    take=1+dp[i][t-coins[i]]
-                dp[i][t]=min(take,notTake)
-        return dp[n-1][amount] if dp[n-1][amount]!=float('inf') else -1
+        for i in range(n):
+            for t in range(coins[i],amount+1):
+                notTake=dp[t]
+                take=1+dp[t-coins[i]]
+                dp[t]=min(take,notTake)
+        print(dp)
+        return dp[amount] if dp[amount]!=float('inf') else -1

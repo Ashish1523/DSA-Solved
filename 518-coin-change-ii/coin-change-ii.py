@@ -17,7 +17,7 @@ class Solution:
         #     return dp[i][amt]
         # count=dfs(n-1,amount)
         # return count
-        prev=[0 for _ in range(amount+1)]
+        prev=[0]*(amount+1)
         prev[0]=1
         curr=prev
         for ind in range(n):

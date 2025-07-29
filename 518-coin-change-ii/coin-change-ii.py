@@ -17,12 +17,14 @@ class Solution:
         #     return dp[i][amt]
         # count=dfs(n-1,amount)
         # return count
+        prev=[0 for _ in range(amount+1)]
         for i in range(amount+1):
-            dp[0][i]=1 if i%coins[0]==0 else 0
-        
+            prev[i]=1 if i%coins[0]==0 else 0
+        curr=prev
         for ind in range(1,n):
             for tar in range(amount+1):
-                notPick=dp[ind-1][tar]
-                pick=dp[ind][tar-coins[ind]] if coins[ind]<=tar else 0
-                dp[ind][tar]=pick+notPick
-        return dp[n-1][amount]
+                notPick=prev[tar]
+                pick=prev[tar-coins[ind]] if coins[ind]<=tar else 0
+                curr[tar]=pick+notPick
+            prev=curr
+        return prev[amount]

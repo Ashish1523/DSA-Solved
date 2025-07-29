@@ -18,10 +18,9 @@ class Solution:
         # count=dfs(n-1,amount)
         # return count
         prev=[0 for _ in range(amount+1)]
-        for i in range(amount+1):
-            prev[i]=1 if i%coins[0]==0 else 0
+        prev[0]=1
         curr=prev
-        for ind in range(1,n):
+        for ind in range(n):
             for tar in range(amount+1):
                 notPick=prev[tar]
                 pick=prev[tar-coins[ind]] if coins[ind]<=tar else 0

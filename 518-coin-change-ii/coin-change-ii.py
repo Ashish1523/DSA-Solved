@@ -1,7 +1,7 @@
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
         n=len(coins)
-        dp=[[-1 for _ in range(amount+1)] for _ in range(n)]
+        # dp=[[-1 for _ in range(amount+1)] for _ in range(n)]
         # def dfs(i,amt):
         #     if i<0:
         #         if amt==0:

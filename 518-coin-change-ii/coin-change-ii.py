@@ -21,9 +21,9 @@ class Solution:
         prev[0]=1
         curr=prev
         for ind in range(n):
-            for tar in range(amount+1):
+            for tar in range(coins[ind],amount+1):
                 notPick=prev[tar]
-                pick=prev[tar-coins[ind]] if coins[ind]<=tar else 0
+                pick=prev[tar-coins[ind]]
                 curr[tar]=pick+notPick
             prev=curr
         return prev[amount]

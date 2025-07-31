@@ -2,7 +2,7 @@ class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         maxProfit=0
         n=len(prices)
-        dp=[[[-1 for _ in range(2+1)] for _ in range(2)] for _ in range(n)]
+        # dp=[[[-1 for _ in range(2+1)] for _ in range(2)] for _ in range(n)]
         # def dfs(ind,buy,cap):
         #     maxProfit=0
         #     if cap==0:

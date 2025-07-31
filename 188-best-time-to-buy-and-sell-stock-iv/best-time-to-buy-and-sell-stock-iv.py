@@ -21,11 +21,12 @@ class Solution:
         
         # return dfs(0,k*2)
 
-        dp=[[0 for _ in range((k*2)+1)] for _ in range(n+1)]
+        dp=[0]*((k*2)+1)
         for ind in range(n-1,-1,-1):
+            prev=dp[:]
             for trans in range(1,k*2+1):
                 if trans%2==0:
-                    dp[ind][trans]=max(-prices[ind]+dp[ind+1][trans-1],dp[ind+1][trans])
+                    dp[trans]=max(-prices[ind]+prev[trans-1],prev[trans])
                 else:
-                    dp[ind][trans]=max(prices[ind]+dp[ind+1][trans-1],dp[ind+1][trans])
-        return dp[0][2*k]
+                    dp[trans]=max(prices[ind]+prev[trans-1],prev[trans])
+        return dp[2*k]

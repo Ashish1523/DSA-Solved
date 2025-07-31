@@ -1,10 +1,10 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        maxProfit=0
+        # maxProfit=0
         n=len(prices)
         dp=[[-1 for _ in range(2)] for _ in range(n)]
         def dfs(ind,buy):
-            nonlocal maxProfit
+            maxProfit=0
             if ind==n:
                 return 0
             if dp[ind][buy]!=-1:

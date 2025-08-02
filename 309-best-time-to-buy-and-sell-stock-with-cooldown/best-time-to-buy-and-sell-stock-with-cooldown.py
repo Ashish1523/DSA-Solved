@@ -6,7 +6,7 @@ class Solution:
         def dfs(i,buy):
             if i>=n:
                 return 0
-            print(i,buy)
+            # print(i,buy)
             if dp[i][buy]!=-1:
                 return dp[i][buy]
             if buy:

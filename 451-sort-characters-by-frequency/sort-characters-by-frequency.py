@@ -13,7 +13,8 @@ class Solution:
             buckets[cnt].append(char)
         
         res=[]
-        for i in range(len(s),0,-1):
+        m=max(mapy.values())
+        for i in range(m,0,-1):
             for c in buckets[i]:
                 res.append(c*i)
         return "".join(res)

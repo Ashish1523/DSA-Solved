@@ -6,6 +6,5 @@ class Solution:
             hashy={}
             for j in range(i,n):
                 hashy[s[j]]=hashy.get(s[j],0)+1
-                beauty=max(hashy.values())-min(hashy.values())
-                sum1+=beauty
+                sum1+=max(hashy.values())-min(hashy.values())
         return sum1

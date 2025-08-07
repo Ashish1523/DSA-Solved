@@ -9,8 +9,7 @@ class Solution:
 
         for i,c in enumerate(s):
             char=(ord(c)-ord('a')+1)
-            prefix=(prefix*base)%mod
-            prefix=(prefix+char)%mod
+            prefix=(prefix*base+char)%mod
             suffix=(suffix+char*power)%mod
             power=(power*base)%mod
 

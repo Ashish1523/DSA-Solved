@@ -11,17 +11,18 @@ class Solution:
         q.append((0,-1))
 
         step=0
-
+        visited=set()
         while q:
             for _ in range(len(q)):
                 u,prevColor=q.popleft()
+                if (u,prevColor) in visited:
+                    continue
+                visited.add((u,prevColor))
                 if ans[u]==-1:
                     ans[u]=step
                 for i,(v,edgeColor) in enumerate(G[u]):
-                    if v==-1 or edgeColor==prevColor:
-                        continue
-                    q.append((v,edgeColor))
-                    G[u][i]=(-1,edgeColor)
+                    if edgeColor!=prevColor:
+                        q.append((v,edgeColor))
             step+=1
         
         return ans

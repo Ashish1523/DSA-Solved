@@ -33,7 +33,7 @@ class Solution:
         for row in range(m):
             for col in range(n):
                 if grid[row][col]==0:
-                    Zero.append([row,col])
+                    Zero.append((row,col))
                     continue
                 for r,c in des:
                     nrow=r+row

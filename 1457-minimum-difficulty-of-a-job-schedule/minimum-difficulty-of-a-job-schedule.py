@@ -19,7 +19,7 @@ class Solution:
 
 
         n=len(jd)
-        dp=[[-1 for _ in range(d+1)] for _ in range(n)]
+        dp=[[-1]*(d+1) for _ in range(n)]
         if n<d:
             return -1
         return solve(0,d)

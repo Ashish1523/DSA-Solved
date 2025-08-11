@@ -14,10 +14,12 @@ class Solution:
                 arr1[ord(ch)-ord('a')]+=1
             return False
 
-
+        dp={}
         def solve(i,temp):
             if i>=n:
                 return len(temp)
+            if (i,temp) in dp:
+                return dp[(i,temp)]
             include=0
             exclude=0
 
@@ -26,6 +28,7 @@ class Solution:
             else:
                 exclude=solve(i+1,temp)
                 include=solve(i+1,temp+arr[i])
+            dp[(i,temp)]=max(include,exclude)
             return max(include,exclude)
 
 

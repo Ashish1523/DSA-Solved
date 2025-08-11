@@ -29,7 +29,7 @@ class Solution:
                 exclude=solve(i+1,temp)
                 include=solve(i+1,temp+arr[i])
             dp[(i,temp)]=max(include,exclude)
-            return max(include,exclude)
+            return dp[(i,temp)]
 
 
 

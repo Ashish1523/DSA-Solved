@@ -18,8 +18,8 @@ class Solution:
         def solve(i,temp):
             if i>=n:
                 return len(temp)
-            if (i,temp) in dp:
-                return dp[(i,temp)]
+            if temp in dp:
+                return dp[temp]
             include=0
             exclude=0
 
@@ -28,8 +28,8 @@ class Solution:
             else:
                 exclude=solve(i+1,temp)
                 include=solve(i+1,temp+arr[i])
-            dp[(i,temp)]=max(include,exclude)
-            return dp[(i,temp)]
+            dp[temp]=max(include,exclude)
+            return dp[temp]
 
 
 

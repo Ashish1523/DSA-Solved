@@ -1,6 +1,6 @@
 class Solution:
     def jobScheduling(self, startTime: List[int], endTime: List[int], profit: List[int]) -> int:
-        n=len(startTime)
+        # n=len(startTime)
         jobs=sorted(zip(startTime,endTime,profit),key=lambda x:x[1])
         dp=[[0,0]]
         for s,e,p in jobs:

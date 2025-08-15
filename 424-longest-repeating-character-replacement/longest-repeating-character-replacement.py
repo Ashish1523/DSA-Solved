@@ -7,7 +7,7 @@ class Solution:
         mapy=[0]*26
         while r<n:
             mapy[ord(s[r])-ord('A')]+=1
-            while (r-l+1)-max(mapy)>k:
+            if (r-l+1)-max(mapy)>k:
                 mapy[ord(s[l])-ord('A')]-=1
                 l+=1
             ans=max(ans,r-l+1)

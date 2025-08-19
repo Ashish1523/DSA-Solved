@@ -15,11 +15,6 @@ class Solution:
                 i=j
         val=j-i
         count+=val*(val+1)//2
-        
-
-
-
-        
         return count
 
 

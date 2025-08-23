@@ -16,5 +16,5 @@ class Solution:
             if abs(left-right)>1:return -1
             return max(left,right)+1
         ans=balance(root)
-        print(ans)
+        # print(ans)
         return ans!=-1

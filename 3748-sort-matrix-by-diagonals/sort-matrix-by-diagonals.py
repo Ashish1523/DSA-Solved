@@ -1,16 +1,22 @@
 class Solution:
     def sortMatrix(self, grid: List[List[int]]) -> List[List[int]]:
-        n=len(grid)
-        for i in range(n):
-            tmp=[grid[i+j][j] for j in range(n-i)]
-            tmp.sort(reverse=True)
-            for j in range(n-i):
-                grid[i+j][j]=tmp[j]
-            
-            for j in range(1,n):
-                tmp=[grid[i][j+i] for i in range(n-j)]
-                tmp.sort()
+        n,m=len(grid),len(grid[0])
+        diags=defaultdict(list)
 
-                for i in range(n-j):
-                    grid[i][j+i]=tmp[i]
+        for i in range(n):
+            for j in range(m):
+                key=i-j
+                if key<0:
+                    heapq.heappush(diags[key],grid[i][j])
+                else:
+                    heapq.heappush(diags[key],-grid[i][j])
+        
+        for i in range(n):
+            for j in range(m):
+                key=i-j
+                if key<0:
+                    grid[i][j]=heapq.heappop(diags[key])
+                else:
+                    grid[i][j]=-heapq.heappop(diags[key])
         return grid
+        

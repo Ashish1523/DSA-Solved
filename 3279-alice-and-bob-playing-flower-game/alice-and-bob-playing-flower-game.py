@@ -3,12 +3,16 @@ class Solution:
         ##sum should be odd -Alice
         ##else Bob
         XOdd=0
-        for i in range(1,n+1):
-            XOdd+=i&1
+        if n&1:
+            XOdd=n//2+1
+        else:
+            XOdd=n//2
         XEven=n-XOdd
         YOdd=0
-        for i in range(1,m+1):
-            YOdd+=i&1
+        if m&1:
+            YOdd=m//2+1
+        else:
+            YOdd=m//2
         YEven=m-YOdd
         # print(XOdd,XEven,YOdd,YEven)
         return XOdd*YEven+YOdd*XEven

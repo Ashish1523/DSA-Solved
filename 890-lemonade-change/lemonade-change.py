@@ -10,20 +10,19 @@ class Solution:
                     return False
                 mapy[5]-=1
             elif change==10:
-                if mapy[5]<2 and mapy[10]==0:
-                    return False
                 if mapy[10]:
                     mapy[10]-=1
-                else:
+                elif mapy[5]>2:
                     mapy[5]-=2
+                else:
+                    return False
             elif change==15:
-                if (mapy[5]<3 and mapy[10]==0):
-                    return False
-                if mapy[10]!=0 and mapy[5]==0:
-                    return False
-                if mapy[10]:
+                if mapy[10] and mapy[5]:
                     mapy[10]-=1
                     mapy[5]-=1
-                else:
+                elif mapy[5]>=3:
                     mapy[5]-=3
+                else:
+                    print(mapy)
+                    return False
         return True

@@ -7,12 +7,12 @@ class Solution:
         ans=0
         while l<h:
             val=nums[l]+nums[h]
-            if val==k:
-                ans+=1
-                l+=1
+            if val>k:
                 h-=1
             elif val<k:
                 l+=1
             else:
+                ans+=1
+                l+=1
                 h-=1
         return ans

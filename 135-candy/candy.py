@@ -8,12 +8,6 @@ class Solution:
                 left[i]+=left[i-1]
             if ratings[n-i-1]>ratings[n-i]:
                 right[n-i-1]+=right[n-i]
-        
-        # for i in range(n-2,-1,-1):
-        #     if ratings[i]>ratings[i+1]:
-        #         right[i]+=right[i+1]
-
-        # print(right)
         ans=0
         for i in range(n):
             ans+=max(left[i],right[i])

@@ -11,7 +11,5 @@ class Solution:
             else:
                 consonents[letter]+=1
                 maxConsonant=max(maxConsonant,consonents[letter])
-        # print(Vowels,maxVowel)
-        # print(consonents,maxConsonant)
         return maxVowel+maxConsonant
 

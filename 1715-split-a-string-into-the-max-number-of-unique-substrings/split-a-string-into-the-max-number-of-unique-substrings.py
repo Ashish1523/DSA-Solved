@@ -6,6 +6,8 @@ class Solution:
         def dfs(prev,i,count,res):
             # print(i)
             nonlocal mcount
+            if count+(n-i)<=mcount:
+                return
             if i>=n:
                 # print(count)
                 mcount=max(count,mcount)

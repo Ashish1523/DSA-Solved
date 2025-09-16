@@ -6,7 +6,6 @@ class Solution:
         #         # print("gcd",num1)
         #         return num1
         #     return gcd(num2,num1%num2)
-        stack
         for num in nums:
             stack.append(num)
             while len(stack)>1:
